@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Annexe 23 — Veille IA Marketing complète</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background: #f4f6f3; padding: 28px; }
+
+.header { margin-bottom: 20px; }
+.header h1 { font-size: 13px; font-weight: 700; color: #1B4332; margin-bottom: 4px; }
+.header p { font-size: 9px; color: #666; }
+
+table { width: 100%; border-collapse: collapse; font-size: 9.5px; }
+
+thead tr th {
+  background: #1B4332; color: #fff;
+  padding: 10px 12px; text-align: left;
+  font-size: 9px; font-weight: 700;
+  border: 0.5px solid #2D6A4F;
+  vertical-align: middle;
+}
+
+tbody tr td {
+  padding: 10px 12px;
+  border: 0.5px solid #ddd;
+  vertical-align: top;
+  line-height: 1.55;
+  color: #222;
+}
+
+tbody tr:nth-child(even) td { background: #f9faf8; }
+tbody tr:nth-child(odd) td  { background: #fff; }
+
+.tendance-cell { font-weight: 700; font-size: 10px; min-width: 130px; }
+.solution { display: inline-block; font-size: 8px; font-weight: 700;
+  padding: 2px 7px; border-radius: 10px; margin-top: 4px; }
+.sol-sujet { background: #EAF3DE; color: #27500A; border: 1px solid #97C459; }
+.sol-ext   { background: #f0f0ee; color: #444; border: 1px solid #ccc; }
+
+.badge-maturite {
+  display: inline-block; font-size: 8px; font-weight: 700;
+  padding: 2px 8px; border-radius: 10px; margin-bottom: 5px;
+  border: 1.5px solid;
+}
+.m-mature    { background: #EAF3DE; color: #27500A; border-color: #27500A; }
+.m-dev       { background: #FFF3CD; color: #7D4E00; border-color: #BA7517; }
+.m-emergent  { background: #FAECE7; color: #7D2000; border-color: #D85A30; }
+
+.badge-rgpd {
+  display: inline-block; font-size: 8px; font-weight: 700;
+  padding: 2px 8px; border-radius: 10px; margin-bottom: 5px;
+  border: 1.5px solid;
+}
+.r-low  { background: #E1F5EE; color: #0F6E56; border-color: #0F6E56; }
+.r-med  { background: #FFF3CD; color: #7D4E00; border-color: #BA7517; }
+
+.data-item { margin-bottom: 4px; }
+.data-item::before { content: "▸ "; color: #1B4332; font-size: 8px; }
+
+.note { font-size: 8px; color: #999; font-style: italic; margin-top: 16px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Annexe 23 — Veille IA Marketing : analyse complète des tendances</h1>
+  <p>Agence Horizon · Natuveris Box · Bloc 3 Q2.1 · Sources : Annexe 11 du sujet Bloc 3 · HubSpot 2025 · RGPDKit 2026 · AI Act 2026 · Pandia Pro 2025 · GreenFlex-ADEME 2024 · eMarketer 2025</p>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:14%;">Tendance / Solution</th>
+      <th style="width:28%;">Données de veille</th>
+      <th style="width:28%;">Maturité — niveau et justification</th>
+      <th style="width:30%;">Contraintes RGPD / éthique détaillées</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- 1. Analyse prédictive -->
+    <tr>
+      <td>
+        <div class="tendance-cell">Analyse prédictive et scoring</div>
+        <div><span class="solution sol-sujet">PredictX</span></div>
+        <div><span class="solution sol-ext">Salesforce Einstein</span></div>
+      </td>
+      <td>
+        <div class="data-item">29 % des organisations investissent dans l'analyse prédictive pour traiter proactivement les problèmes clients (HubSpot, 2025).</div>
+        <div class="data-item">Les entreprises exploitant l'IA pour la personnalisation augmentent leurs revenus de 10 à 30 % (McKinsey, cité par Stema Partners, 2025).</div>
+        <div class="data-item">PredictX : licence ~1 200 €/mois, cloud français, DPA conforme RGPD, minimum 50 000 profils actifs requis (Annexe 11 du sujet, p.17).</div>
+        <div class="data-item">Coût d'opportunité estimé : jusqu'à 64 700 € de LTV préservée par point de rétention récupéré sur la base Natuveris Box (Annexe 1 du sujet, p.6).</div>
+      </td>
+      <td>
+        <div><span class="badge-maturite m-mature">Mature</span></div>
+        Technologie éprouvée, largement déployée en e-commerce depuis 2020. PredictX opérationnel dès T1 2026 selon le plan de mise en œuvre Q1.2. Algorithmes nécessitant un minimum de 50 000 profils actifs pour garantir la fiabilité : seuil non encore atteint par Natuveris Box (10 250 abonnés actifs), ce qui impose une phase de calibration initiale de 3 à 6 mois avant pleine efficacité.
+      </td>
+      <td>
+        <div><span class="badge-rgpd r-low">Risque faible</span></div>
+        Base légale : intérêt légitime pour le scoring comportemental, documenté dans le catalogue de données CDP. Le score churn ne constitue pas un traitement à haut risque au sens de l'AI Act (pas de décision automatisée impactant un droit fondamental). Obligation de transparence : l'abonné peut être informé de l'existence d'un scoring sans que le détail de l'algorithme soit divulgué. Droit d'opposition RGPD : tout abonné ayant exercé son droit d'opposition est automatiquement exclu du segment cible. Durée de conservation des scores : 24 mois maximum, en cohérence avec le champ nps_score (Annexe 9 du sujet, p.15). PredictX hébergé en cloud français : conformité souveraineté numérique garantie.
+      </td>
+    </tr>
+
+    <!-- 2. Recommandation produit -->
+    <tr>
+      <td>
+        <div class="tendance-cell">Recommandation produit temps réel</div>
+        <div><span class="solution sol-sujet">RecommAI</span></div>
+        <div><span class="solution sol-ext">Dynamic Yield</span></div>
+      </td>
+      <td>
+        <div class="data-item">Amazon et Netflix : taux de conversion amélioré de 35 % grâce aux algorithmes de recommandation IA (McKinsey, cité par Stema Partners, 2025).</div>
+        <div class="data-item">RecommAI : facturation à la requête (~0,10 € par appel), hébergement UE, DPA conforme, prérequis feature store CDP (Annexe 11 du sujet, p.17).</div>
+        <div class="data-item">72 % des consommateurs français choisissent selon l'origine produit (GreenFlex-ADEME 2024) : argument fort pour personnaliser les recommandations sur ce critère.</div>
+        <div class="data-item">5 références add-on les plus demandées identifiées dans l'Annexe 4 du sujet (p.9) : base de données de recommandation immédiatement disponible.</div>
+      </td>
+      <td>
+        <div><span class="badge-maturite m-mature">Mature</span></div>
+        Moteur de recommandation temps réel opérationnel en production, facturé à la requête sans engagement minimum. Prérequis technique identifié : mise en place d'un feature store CDP pour agréger et historiser les variables produits et clients (Annexe 11 du sujet, p.17). Ce prérequis conditionne l'activation au T2 2026 selon le plan de mise en œuvre Q1.2. Dynamic Yield (racheté par Mastercard) : solution plus complexe et coûteuse, adaptée à des volumes supérieurs à 100 000 profils.
+      </td>
+      <td>
+        <div><span class="badge-rgpd r-low">Risque faible</span></div>
+        Base légale : intérêt légitime pour les recommandations basées sur l'historique d'achat (champ purchase_history, base légale contrat, Annexe 9 du sujet, p.15). Données comportementales PWA (logs page_produit_vu, tutoriel_vu) : base légale intérêt légitime documentée dans le catalogue data. Feature store limité à 24 mois de conservation en cohérence avec la politique interne. RecommAI hébergé en UE avec DPA conforme : aucun transfert hors UE. Pas de personnalisation IA sur le canal micro-influence : l'authenticité de la relation créateur/communauté doit rester préservée (Annexe 11 du Bloc 2, p.17).
+      </td>
+    </tr>
+
+    <!-- 3. Génération de contenu -->
+    <tr>
+      <td>
+        <div class="tendance-cell">Génération de contenu IA</div>
+        <div><span class="solution sol-sujet">ContentGen</span></div>
+        <div><span class="solution sol-ext">Jasper AI</span></div>
+      </td>
+      <td>
+        <div class="data-item">82 % des e-commerçants français utilisaient déjà l'IA générative en 2025 (FEVAD, cité par Insight Mag, 2026).</div>
+        <div class="data-item">ContentGen : licence ~900 €/mois, module d'anonymisation intégré, droits d'auteur images à vérifier au cas par cas (Annexe 11 du sujet, p.17).</div>
+        <div class="data-item">Réduction estimée du coût de production de -30 % par rapport à 2024 sur la base du plan budgétaire Bloc 1.</div>
+        <div class="data-item">Jasper AI : solution sans hébergement UE garanti, nécessite un DPA renforcé pour conformité RGPD.</div>
+      </td>
+      <td>
+        <div><span class="badge-maturite m-mature">Mature</span></div>
+        Technologie mature et massivement adoptée. ContentGen opérationnel dès T2 2026 selon le plan de mise en œuvre Q1.2. Limite principale identifiée : les droits d'auteur sur les images générées doivent être vérifiés au cas par cas, sans automatisation possible de ce contrôle (Annexe 11 du sujet, p.17). Contrôle humain RSE systématique avant publication : contrainte structurelle qui réduit les gains de productivité sur les contenus à validation complexe.
+      </td>
+      <td>
+        <div><span class="badge-rgpd r-med">Risque modéré</span></div>
+        AI Act (Art. 50) : obligation de transparence, tout contenu généré par IA doit être explicitement identifié comme tel auprès des utilisateurs (risque limité). ContentGen intègre un module d'anonymisation des données en entrée : les données clients ne sont jamais transmises brutes à la plateforme. Droits d'auteur : les images générées peuvent faire l'objet de litiges selon les modèles sous-jacents, nécessitant une vérification juridique au cas par cas. Risque de greenwashing algorithmique : un contenu RSE généré automatiquement sans validation humaine pourrait contenir des affirmations non conformes aux valeurs fondatrices de Natuveris Box (Annexe 2 du sujet, p.10). Validation RSE greenwashing-free systématique actée en Q1.2.
+      </td>
+    </tr>
+
+    <!-- 4. Chatbots -->
+    <tr>
+      <td>
+        <div class="tendance-cell">Chatbots conversationnels IA</div>
+        <div><span class="solution sol-ext">Intercom Fin</span></div>
+        <div><span class="solution sol-ext">Zendesk AI</span></div>
+      </td>
+      <td>
+        <div class="data-item">+340 % d'intégration de chatbots IA sur les sites e-commerce en 2024 (RGPDKit, 2026).</div>
+        <div class="data-item">41 % des entreprises prévoient d'investir dans les agents IA pour automatiser le traitement des demandes clients (HubSpot, 2025).</div>
+        <div class="data-item">Gartner : 75 % des entreprises utiliseront un chatbot ou assistant IA d'ici 2027.</div>
+        <div class="data-item">Réduction estimée des coûts SAV de -50 % grâce aux chatbots IA (HubSpot, 2025).</div>
+        <div class="data-item">Intercom Fin : hébergement UE disponible, DPA conforme. Zendesk AI : hébergement USA par défaut, transfert hors UE à encadrer.</div>
+      </td>
+      <td>
+        <div><span class="badge-maturite m-dev">En développement</span></div>
+        Technologie en forte croissance mais dont la maturité sur des cas d'usage complexes (personnalisation RSE, traçabilité artisanale) reste à démontrer. Les chatbots de service client généraliste sont matures ; les chatbots capables de répondre sur l'origine précise d'un produit artisanal ou sur le bilan CO₂ d'un coffret nécessitent une intégration fine avec la CDP et le catalogue produits, encore non stabilisé. Horizon d'activation réaliste : S2 2026 après consolidation de l'architecture data Q1.1.
+      </td>
+      <td>
+        <div><span class="badge-rgpd r-med">Risque modéré</span></div>
+        AI Act (Art. 50) : obligation de transparence immédiate, l'abonné doit savoir qu'il interagit avec une IA dès le premier message (risque limité). Classement CNIL 2025 : les chatbots e-commerce ne figurent pas dans les 5 secteurs à risque élevé prioritaires, mais la collecte de données personnelles dans les conversations (nom, commande, motif de contact) impose un consentement préalable et une information transparente. Transfert hors UE : OpenAI (ChatGPT), Google (Gemini) stockent les données aux États-Unis, nécessitant des garanties contractuelles renforcées. Intercom Fin avec hébergement UE : solution privilégiée pour conformité souveraineté numérique. Pseudonymisation en temps réel des données personnelles avant traitement par le modèle : recommandée par la CNIL.
+      </td>
+    </tr>
+
+    <!-- 5. Réalité augmentée -->
+    <tr>
+      <td>
+        <div class="tendance-cell">Réalité augmentée produit</div>
+        <div><span class="solution sol-ext">Zakeke</span></div>
+        <div><span class="solution sol-ext">Vertebrae</span></div>
+      </td>
+      <td>
+        <div class="data-item">IKEA AR : augmentation significative de l'engagement et des ventes grâce à la visualisation produit en environnement réel (Tiagency, 2025).</div>
+        <div class="data-item">E-commerce mondial projeté à 21,2 % des ventes mondiales en 2025, avec AR identifiée comme levier de conversion majeur (eMarketer, cité par Boostmyshop, 2025).</div>
+        <div class="data-item">Alliance AR + IA : personnalisation à grande échelle et réactivité inédite, mais vigilance réglementaire accrue sur les données biométriques potentiellement collectées (Orvinfait, 2026).</div>
+        <div class="data-item">Zakeke : solution SaaS e-commerce AR sans collecte de données biométriques. Vertebrae : spécialisé 3D/AR retail, hébergement US.</div>
+      </td>
+      <td>
+        <div><span class="badge-maturite m-emergent">Émergente</span></div>
+        Technologie prometteuse mais dont l'adoption reste concentrée sur les grandes marques retail (IKEA, L'Oréal) avec des budgets d'intégration significatifs. Pour une PME de 46 collaborateurs avec une infrastructure data en cours de consolidation, l'activation AR en 2026 représente un risque d'exécution élevé. Les cas d'usage pertinents pour Natuveris Box (visualisation d'objets artisanaux dans l'environnement réel) nécessitent une modélisation 3D de l'ensemble du catalogue produits, non disponible à ce stade. Horizon d'activation réaliste : S2 2027, après stabilisation de l'architecture data et du catalogue 3D.
+      </td>
+      <td>
+        <div><span class="badge-rgpd r-low">Risque faible</span></div>
+        Pas de collecte de données biométriques dans les cas d'usage retenus (visualisation produit, pas de reconnaissance faciale). Zakeke : aucun traitement de données personnelles identifiantes dans le flux AR standard. Vertebrae : hébergement US, DPA à négocier pour conformité RGPD en cas de collecte de données comportementales AR. AI Act : les systèmes AR de visualisation produit sans reconnaissance d'émotions ni identification biométrique tombent dans la catégorie risque minimal, sans obligation réglementaire spécifique. Point de vigilance : si l'AR est couplée à de la personnalisation IA (recommandation produit en overlay), le traitement des données comportementales AR doit être documenté dans le registre des traitements.
+      </td>
+    </tr>
+
+    <!-- 6. Hyperpersonnalisation CDP -->
+    <tr>
+      <td>
+        <div class="tendance-cell">Hyperpersonnalisation CDP</div>
+        <div><span class="solution sol-ext">Segment</span></div>
+        <div><span class="solution sol-ext">Bloomreach</span></div>
+      </td>
+      <td>
+        <div class="data-item">Les marques les plus visionnaires misent sur l'IA pour créer des expériences sur-mesure à partir de données first-party de haute qualité, en réponse à la fin des cookies tiers (Impactmarketing, 2025).</div>
+        <div class="data-item">Personnalisation avancée : augmentation significative des taux de conversion et de la satisfaction client selon plusieurs études sectorielles (Pandia Pro, 2025).</div>
+        <div class="data-item">Natuveris Box : infrastructure CDP cloud français déjà engagée, migration en cours. Avantage concurrentiel estimé à 18-24 mois sur les challengers non équipés (Bloc 2).</div>
+        <div class="data-item">Segment (Twilio) : leader CDP marché, hébergement UE disponible. Bloomreach : spécialisé e-commerce, forte intégration CRM/CDP.</div>
+      </td>
+      <td>
+        <div><span class="badge-maturite m-dev">En développement</span></div>
+        La technologie CDP est mature ; c'est son exploitation à pleine capacité qui est en développement chez Natuveris Box. La migration CDP est engagée mais les règles de synchronisation entre les deux architectures ne sont pas encore stabilisées (Annexe 8 du sujet, p.14), ce qui limite temporairement les cas d'usage d'hyperpersonnalisation. L'activation complète est conditionnée à la résolution des trois blocages identifiés en Q1.1 : unification UUID, fiabilisation flux SAV, module consentement PWA. Horizon d'activation : T2 2026 selon le plan de mise en œuvre Q1.2.
+      </td>
+      <td>
+        <div><span class="badge-rgpd r-med">Risque modéré</span></div>
+        Base légale mixte selon les données mobilisées : consentement pour les données comportementales PWA (ip_address, cookie_id), intérêt légitime pour les données d'historique d'achat. La personnalisation temps réel nécessite que toutes les bases légales soient documentées et vérifiées avant activation dans la CDP. Risque de profilage excessif : la CDP doit intégrer des garde-fous limitant la granularité du profilage aux finalités déclarées dans le registre des traitements. Segment (Twilio) : données pouvant transiter aux États-Unis selon la configuration, DPA à vérifier. Bloomreach : hébergement UE natif, solution privilégiée pour conformité souveraineté numérique en cohérence avec la troisième orientation stratégique du Bloc 1. Droit à la portabilité et droit d'effacement : la CDP doit permettre l'export et la suppression des données d'un abonné dans un délai de 30 jours maximum.
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<div class="note">
+  Sources : Annexe 11 du sujet Bloc 3, p.17 · Annexe 9 du sujet Bloc 3, p.15 · Annexe 8 du sujet Bloc 3, p.14 · HubSpot Statistiques IA 2025 · RGPDKit Chatbot IA RGPD 2026 · AI Act guide conformité 2026 (Fragments Studio, Quillet Digital) · Pandia Pro Tendances IA Marketing 2025 · Impactmarketing.fr Marketing Digital 2025 · eMarketer / Boostmyshop E-commerce 2025 · GreenFlex-ADEME Baromètre 2024 · Orvinfait Tendances AR 2026 · Tiagency Tendances Marketing Digital 2025
+</div>
+
+</body>
+</html>
