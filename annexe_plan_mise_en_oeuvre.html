@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Annexe 23 : Plan de mise en œuvre des scénarios d'automation</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background: #f4f6f3; padding: 28px; }
+
+.header { margin-bottom: 24px; }
+.header h1 { font-size: 13px; font-weight: 700; color: #1B4332; margin-bottom: 4px; }
+.header p { font-size: 9px; color: #666; }
+
+.section-title {
+  font-size: 11px; font-weight: 700; color: #1B4332;
+  margin: 24px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1.5px solid #2D9E75;
+}
+
+/* ── DÉPENDANCES ── */
+.dep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 0.5px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.dep-col { padding: 14px 16px; }
+.dep-col:not(:last-child) { border-right: 0.5px solid #ddd; }
+.dep-label { font-size: 8px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+.dep-title { font-size: 10px; font-weight: 700; margin-bottom: 6px; }
+.dep-text { font-size: 9px; color: #444; line-height: 1.55; }
+.dep-horizon { display: inline-block; font-size: 8px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-top: 8px; border: 1.5px solid; }
+.h-t1 { background: #EAF3DE; color: #27500A; border-color: #27500A; }
+.h-t2 { background: #E6F1FB; color: #0C447C; border-color: #0C447C; }
+.h-s2 { background: #EEEDFE; color: #3C3489; border-color: #534AB7; }
+
+.dep-arrow {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: #2D9E75; padding: 0 4px;
+}
+.dep-note { font-size: 8.5px; color: #888; font-style: italic; margin-top: 6px; }
+
+/* ── JALONS ── */
+table { width: 100%; border-collapse: collapse; font-size: 9px; margin-bottom: 20px; }
+thead th {
+  background: #1B4332; color: #fff;
+  padding: 8px 10px; text-align: left;
+  font-size: 8.5px; font-weight: 700;
+  border: 0.5px solid #2D6A4F;
+}
+tbody td {
+  padding: 9px 10px;
+  border: 0.5px solid #ddd;
+  vertical-align: top;
+  line-height: 1.55;
+  color: #222;
+}
+tbody tr:nth-child(even) td { background: #f9faf8; }
+tbody tr:nth-child(odd) td  { background: #fff; }
+
+.jalon-badge {
+  display: inline-block; font-size: 7.5px; font-weight: 700;
+  padding: 1px 6px; border-radius: 8px; margin-bottom: 4px;
+  border: 1px solid;
+}
+.j-s1 { background: #EAF3DE; color: #27500A; border-color: #97C459; }
+.j-s2 { background: #E6F1FB; color: #0C447C; border-color: #85B7EB; }
+.j-s3 { background: #EEEDFE; color: #3C3489; border-color: #AFA9EC; }
+
+.resp { font-size: 8px; color: #666; font-style: italic; }
+
+/* ── QUALITÉ TECHNIQUE ── */
+.qualite-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.qualite-card {
+  background: #fff;
+  border: 0.5px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.qualite-scenario { font-size: 8px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+.qualite-item { font-size: 9px; color: #333; line-height: 1.6; margin-bottom: 3px; }
+.qualite-item::before { content: "▸ "; color: #1B4332; }
+.qualite-seuil { font-weight: 700; color: #1B4332; }
+
+/* ── GO/NO-GO ── */
+.gng-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.gng-card {
+  border-radius: 8px;
+  padding: 12px 14px;
+  border: 0.5px solid;
+}
+.gng-go { background: #EAF3DE; border-color: #97C459; }
+.gng-nogo { background: #FCEBEB; border-color: #F09595; }
+.gng-title { font-size: 9px; font-weight: 700; margin-bottom: 8px; }
+.gng-go .gng-title { color: #27500A; }
+.gng-nogo .gng-title { color: #791F1F; }
+.gng-item { font-size: 9px; line-height: 1.6; margin-bottom: 3px; }
+.gng-go .gng-item { color: #27500A; }
+.gng-go .gng-item::before { content: "✓ "; }
+.gng-nogo .gng-item { color: #791F1F; }
+.gng-nogo .gng-item::before { content: "✗ "; }
+
+.note { font-size: 8px; color: #999; font-style: italic; margin-top: 16px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Annexe 23 : Plan de mise en œuvre des scénarios d'automation marketing</h1>
+  <p>Agence Horizon · Natuveris Box · Bloc 3 Q1.2 · Responsable : Direction Data + Direction Marketing</p>
+</div>
+
+<!-- DÉPENDANCES -->
+<div class="section-title">1. Dépendances entre scénarios</div>
+
+<div style="display:flex; align-items:stretch; gap:0; margin-bottom:6px;">
+  <div class="dep-grid" style="flex:1;">
+    <div class="dep-col" style="background:#EAF3DE;">
+      <div class="dep-label">Scénario 1</div>
+      <div class="dep-title" style="color:#27500A;">Réengagement prédictif</div>
+      <div class="dep-text">Prérequis : UUID unifié + PredictX connecté + flux SAV fiabilisé à 2h</div>
+      <div><span class="dep-horizon h-t1">T1 2026</span></div>
+    </div>
+    <div class="dep-col" style="background:#E6F1FB;">
+      <div class="dep-label">Scénario 2</div>
+      <div class="dep-title" style="color:#0C447C;">Personnalisation prédictive</div>
+      <div class="dep-text">Prérequis : Feature store RecommAI + consentement PWA documenté. Dépend de l'UUID unifié du S1.</div>
+      <div><span class="dep-horizon h-t2">T2 2026</span></div>
+    </div>
+    <div class="dep-col" style="background:#EEEDFE;">
+      <div class="dep-label">Scénario 3</div>
+      <div class="dep-title" style="color:#3C3489;">Nurturing B2B</div>
+      <div class="dep-text">Prérequis : Landing page Pro + LinkedIn Ads configuré. Indépendant des scénarios 1 et 2.</div>
+      <div><span class="dep-horizon h-s2">S2 2026</span></div>
+    </div>
+  </div>
+</div>
+<div class="dep-note">Note : si le prérequis UUID du S1 n'est pas levé au T1 2026, le S2 est décalé mécaniquement. Le S3 peut être activé selon son propre calendrier sans attendre les deux premiers.</div>
+
+<!-- JALONS -->
+<div class="section-title">2. Jalons détaillés par scénario</div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width:10%;">Scénario</th>
+      <th style="width:12%;">Période</th>
+      <th style="width:28%;">Action</th>
+      <th style="width:20%;">Responsable</th>
+      <th style="width:30%;">Livrable / Critère de validation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="5"><span class="jalon-badge j-s1">S1</span><br>Réengagement prédictif</td>
+      <td>Janvier 2026</td>
+      <td>Déduplication CRM/PWA via UUID : algorithme de matching email + nom</td>
+      <td><span class="resp">Direction Data</span></td>
+      <td>Taux de doublons CDP &lt; 0,5 % · Score qualité CRM ≥ 95/100</td>
+    </tr>
+    <tr>
+      <td>Janvier 2026</td>
+      <td>Connexion PredictX à la CDP · Configuration du seuil de déclenchement à 25 %</td>
+      <td><span class="resp">Direction Data + Technique</span></td>
+      <td>Premier batch de scores churn produit · Validation sur échantillon 500 profils</td>
+    </tr>
+    <tr>
+      <td>Février 2026</td>
+      <td>Fiabilisation flux SAV : réduction latence de 24h à 2h via connecteur API dédié</td>
+      <td><span class="resp">Direction Technique</span></td>
+      <td>Latence SAV ≤ 2h · Score qualité SAV ≥ 90/100</td>
+    </tr>
+    <tr>
+      <td>Février 2026</td>
+      <td>Paramétrage séquence automation J0/J+2/J+5 dans le moteur de marketing automation</td>
+      <td><span class="resp">Direction Marketing</span></td>
+      <td>Séquence testée sur segment pilote 100 abonnés · Taux d'ouverture J+2 mesuré</td>
+    </tr>
+    <tr>
+      <td>Mars 2026</td>
+      <td>Activation complète S1 sur l'ensemble de la base · Premier go/no-go</td>
+      <td><span class="resp">Direction Marketing + Data</span></td>
+      <td>Taux de rétention ≥ 75 % · CAC stable · Rapport exécutif J+30</td>
+    </tr>
+
+    <tr>
+      <td rowspan="4"><span class="jalon-badge j-s2">S2</span><br>Personnalisation prédictive</td>
+      <td>Février 2026</td>
+      <td>Documentation complète du consentement PWA pour ip_address, cookie_id, device_id</td>
+      <td><span class="resp">Direction Data + Conformité</span></td>
+      <td>Taux de consentement PWA documenté ≥ 90 % · Mise à jour registre des traitements</td>
+    </tr>
+    <tr>
+      <td>Mars 2026</td>
+      <td>Mise en place du feature store CDP : agrégation logs PWA + catalogue produits + stock</td>
+      <td><span class="resp">Direction Technique</span></td>
+      <td>Feature store actif · Variables historisées sur 24 mois · DPA RecommAI signé</td>
+    </tr>
+    <tr>
+      <td>Avril 2026</td>
+      <td>Intégration RecommAI dans la PWA (page boutique + e-mail post-livraison) · Tests A/B</td>
+      <td><span class="resp">Direction Marketing + Technique</span></td>
+      <td>Bloc recommandation affiché · Taux de clic mesuré sur 2 semaines</td>
+    </tr>
+    <tr>
+      <td>Mai 2026</td>
+      <td>Activation push contextuel post-tutoriel · Déclenchement en moins de 30 minutes</td>
+      <td><span class="resp">Direction Marketing</span></td>
+      <td>Taux de conversion add-on ≥ 8 % · Panier moyen add-on en progression</td>
+    </tr>
+
+    <tr>
+      <td rowspan="4"><span class="jalon-badge j-s3">S3</span><br>Nurturing B2B</td>
+      <td>Juillet 2026</td>
+      <td>Mise en ligne landing page Natuveris Pro + configuration UTM et pixel LinkedIn</td>
+      <td><span class="resp">Direction Marketing + Technique</span></td>
+      <td>Landing page live · Pixel LinkedIn actif · Premier batch UTM collecté</td>
+    </tr>
+    <tr>
+      <td>Juillet 2026</td>
+      <td>Paramétrage lead scoring : critères comportementaux + seuil 60 points</td>
+      <td><span class="resp">Direction Data + Commercial</span></td>
+      <td>Modèle de scoring validé sur 20 profils pilotes · DPA LinkedIn signé</td>
+    </tr>
+    <tr>
+      <td>Août 2026</td>
+      <td>Activation séquence nurturing J0/J+7/J+14 · Premier batch de leads scorés</td>
+      <td><span class="resp">Direction Marketing + Commercial</span></td>
+      <td>Premiers leads qualifiés (score ≥ 60) transmis au commercial</td>
+    </tr>
+    <tr>
+      <td>Septembre 2026</td>
+      <td>Premier bilan S3 · Ajustement du seuil de qualification si nécessaire</td>
+      <td><span class="resp">Direction Commerciale + Marketing</span></td>
+      <td>CAC B2B ≤ 250 € · Taux de conversion prospect mesuré · Go/no-go pilote Pro hiver 2026</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- QUALITÉ TECHNIQUE -->
+<div class="section-title">3. Indicateurs de qualité technique : seuils d'activation</div>
+
+<div class="qualite-grid">
+  <div class="qualite-card">
+    <div class="qualite-scenario">Scénario 1 : T1 2026</div>
+    <div class="qualite-item">Score qualité CDP <span class="qualite-seuil">≥ 95/100</span></div>
+    <div class="qualite-item">Taux de doublons CRM/PWA <span class="qualite-seuil">&lt; 0,5 %</span></div>
+    <div class="qualite-item">Latence SAV <span class="qualite-seuil">≤ 2 heures</span></div>
+    <div class="qualite-item">Score churn PredictX calibré sur <span class="qualite-seuil">≥ 3 mois</span> de données</div>
+  </div>
+  <div class="qualite-card">
+    <div class="qualite-scenario">Scénario 2 : T2 2026</div>
+    <div class="qualite-item">Consentement PWA documenté <span class="qualite-seuil">≥ 90 %</span> des profils actifs</div>
+    <div class="qualite-item">Feature store actif avec données <span class="qualite-seuil">≥ 6 mois</span> d'historique</div>
+    <div class="qualite-item">DPA RecommAI signé et intégré au registre des traitements</div>
+    <div class="qualite-item">UUID unifié hérité du S1 <span class="qualite-seuil">opérationnel</span></div>
+  </div>
+  <div class="qualite-card">
+    <div class="qualite-scenario">Scénario 3 : S2 2026</div>
+    <div class="qualite-item">Landing page Pro en ligne avec <span class="qualite-seuil">UTM actifs</span></div>
+    <div class="qualite-item">Pixel LinkedIn configuré et données collectées sur <span class="qualite-seuil">≥ 2 semaines</span></div>
+    <div class="qualite-item">DPA LinkedIn signé</div>
+    <div class="qualite-item">Modèle de scoring validé sur <span class="qualite-seuil">≥ 20 profils</span> pilotes</div>
+  </div>
+</div>
+
+<!-- GO / NO-GO -->
+<div class="section-title">4. Critères de go / no-go et protocole de sortie</div>
+
+<div class="gng-grid">
+  <div class="gng-card gng-go">
+    <div class="gng-title">Critères GO : activation du scénario suivant</div>
+    <div class="gng-item">Score qualité CDP ≥ 95/100 sur les flux concernés</div>
+    <div class="gng-item">Taux de rétention S1 ≥ 75 % sur 4 semaines consécutives</div>
+    <div class="gng-item">Taux de clic recommandations S2 ≥ 8 % sur 2 semaines de test</div>
+    <div class="gng-item">Premiers leads S3 qualifiés transmis au commercial avec CAC ≤ 250 €</div>
+    <div class="gng-item">Validation comité mensuel Direction Marketing + Direction Data</div>
+  </div>
+  <div class="gng-card gng-nogo">
+    <div class="gng-title">Protocole NO-GO : sortie et décision corrective</div>
+    <div class="gng-item">Score qualité CDP &lt; 90/100 à J+30 : suspension activation, chantier data prioritaire</div>
+    <div class="gng-item">Taux de rétention S1 &lt; 73 % sur 2 mois : révision séquence + escalade direction</div>
+    <div class="gng-item">Taux de clic S2 &lt; 4 % sur 4 semaines : révision règles RecommAI + test A/B complémentaire</div>
+    <div class="gng-item">CAC B2B S3 &gt; 400 € sur 8 semaines : révision seuil scoring + ajustement ciblage LinkedIn</div>
+    <div class="gng-item">Décision arrêt ou pivot actée en comité mensuel sans attendre le bilan semestriel</div>
+  </div>
+</div>
+
+<div class="note">
+  Responsables : Direction Data (qualité technique · UUID · feature store) · Direction Marketing (séquences automation · go/no-go) · Direction Technique (connecteurs API · intégrations) · Direction Commerciale (S3 · leads qualifiés) · Direction Conformité (DPA · registre traitements · consentement PWA)
+</div>
+
+</body>
+</html>
