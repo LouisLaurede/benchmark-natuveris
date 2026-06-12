@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Annexe 31, justification des évaluations probabilité et impact</title>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f4;
+    margin: 0;
+    padding: 24px;
+    color: #333;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+  }
+  .header {
+    background-color: #065f46;
+    color: #ffffff;
+    padding: 16px 20px;
+  }
+  .header h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .header p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #d1fae5;
+  }
+  .key {
+    padding: 16px 20px;
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    font-size: 12px;
+    color: #555;
+  }
+  .key-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .tag-1 { background-color: #dbeafe; color: #1e40af; }
+  .tag-2 { background-color: #ede9fe; color: #5b21b6; }
+  .tag-3 { background-color: #ccfbf1; color: #115e59; }
+  .tag-4 { background-color: #e5e7eb; color: #374151; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  thead th {
+    background-color: #f9fafb;
+    color: #555;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f1f1f1;
+    vertical-align: top;
+  }
+  tbody tr:hover {
+    background-color: #fafafa;
+  }
+  .code {
+    font-weight: 600;
+    color: #444;
+    white-space: nowrap;
+  }
+  .score-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .score {
+    font-weight: 700;
+    color: #333;
+  }
+  .just {
+    margin: 0;
+    color: #555;
+  }
+  .col-pi {
+    width: 30%;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Annexe 31, justification des évaluations probabilité et impact</h1>
+    <p>Chaque score s'appuie sur au moins un des quatre fondements ci-dessous</p>
+  </div>
+
+  <div class="key">
+    <div class="key-item"><span class="tag tag-1">1</span>Fait déjà survenu ou constaté, incident chiffré ou faille documentée dans l'état des lieux actuel</div>
+    <div class="key-item"><span class="tag tag-2">2</span>Exposition chiffrée, financière ou opérationnelle</div>
+    <div class="key-item"><span class="tag tag-3">3</span>Certitude calendaire ou contractuelle déjà actée</div>
+    <div class="key-item"><span class="tag tag-4">4</span>Pattern ou mécanisme comparable déjà documenté dans le projet</div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:6%;">Code</th>
+        <th style="width:24%;">Risque</th>
+        <th class="col-pi">Probabilité</th>
+        <th class="col-pi">Impact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="code">R1</td>
+        <td>Brief créatif Printemps Local non validé à J-21</td>
+        <td>
+          <div class="score-row"><span class="score">P3</span><span class="tag tag-4">4</span></div>
+          <p class="just">Le REX Box Duo décrit trois allers-retours avant le GO packaging sur le même circuit de validation que le brief Printemps Local.</p>
+        </td>
+        <td>
+          <div class="score-row"><span class="score">I4</span><span class="tag tag-3">3</span></div>
+          <p class="just">Le rétroplanning prévoit déjà le report de la phase 2 à mars S3, ce qui borne l'impact à majeur.</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="code">R2</td>
+        <td>Concentration des arbitrages de juin</td>
+        <td>
+          <div class="score-row"><span class="score">P4</span><span class="tag tag-3">3</span></div>
+          <p class="just">Le rétroplanning et le panorama des ressources internes placent les trois décisions de juin sur la même fenêtre que la surcharge du pôle Data.</p>
+        </td>
+        <td>
+          <div class="score-row"><span class="score">I4</span><span class="tag tag-2">2</span></div>
+          <p class="just">Les trois décisions conditionnent directement le S2, Natuveris Pro et le brief Maison Responsable.</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="code">R3</td>
+        <td>Confusion d'imputation entre les enveloppes budgétaires</td>
+        <td>
+          <div class="score-row"><span class="score">P3</span><span class="tag tag-4">4</span></div>
+          <p class="just">Même mécanisme de détection tardive que l'incident de sur-facturation CRM d'avril 2024, appliqué ici à deux enveloppes parallèles.</p>
+        </td>
+        <td>
+          <div class="score-row"><span class="score">I5</span><span class="tag tag-3">3</span></div>
+          <p class="just">La gouvernance pose tout dépassement budgétaire en validation Direction Générale, ce qui qualifie d'emblée ce risque comme stratégique.</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="code">R4</td>
+        <td>Dépassement du palier de licence CRM</td>
+        <td>
+          <div class="score-row"><span class="score">P4</span><span class="tag tag-1">1</span></div>
+          <p class="just">Sur-facturation de 1560 euros déjà survenue en avril 2024, et la croissance de la base abonnés rapproche mécaniquement du palier suivant.</p>
+        </td>
+        <td>
+          <div class="score-row"><span class="score">I2</span><span class="tag tag-2">2</span></div>
+          <p class="just">Précédent borné à 1560 euros, sans effet sur le planning ni les livrables.</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="code">R5</td>
+        <td>Consentement PWA non documenté</td>
+        <td>
+          <div class="score-row"><span class="score">P4</span><span class="tag tag-1">1</span></div>
+          <p class="just">L'état des lieux des flux de données documente explicitement l'absence de consentement correctement renseigné sur les champs comportementaux PWA.</p>
+        </td>
+        <td>
+          <div class="score-row"><span class="score">I4</span><span class="tag tag-2">2</span></div>
+          <p class="just">Bloque légalement l'exploitation des 22 événements PWA et conditionne l'activation de RecommAI au T2 2026.</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="code">R6</td>
+        <td>Purge automatisée du session_id non garantie</td>
+        <td>
+          <div class="score-row"><span class="score">P3</span><span class="tag tag-1">1</span></div>
+          <p class="just">Le glossaire RGPD documente l'absence de garantie de purge sur ce seul champ, sans mécanisme d'aggravation identifié.</p>
+        </td>
+        <td>
+          <div class="score-row"><span class="score">I3</span><span class="tag tag-2">2</span></div>
+          <p class="just">Donnée volatile à faible valeur d'exploitation, exposition cumulative limitée à un seul champ.</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="code">R7</td>
+        <td>Coexistence lakehouse et CDP</td>
+        <td>
+          <div class="score-row"><span class="score">P4</span><span class="tag tag-3">3</span></div>
+          <p class="just">La migration est en cours, la coexistence est un état actuel sur la fenêtre T1 2026, pas un risque futur.</p>
+        </td>
+        <td>
+          <div class="score-row"><span class="score">I5</span><span class="tag tag-2">2</span></div>
+          <p class="just">Jusqu'à 165 000 euros de LTV menacée si les scores de désabonnement sont erronés pendant la migration.</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="code">R8</td>
+        <td>Connecteur API PredictX insuffisant</td>
+        <td>
+          <div class="score-row"><span class="score">P3</span><span class="tag tag-4">4</span></div>
+          <p class="just">Le plan de mise en oeuvre prévoit déjà cette éventualité comme scénario alternatif, signe d'une probabilité réelle mais non certaine.</p>
+        </td>
+        <td>
+          <div class="score-row"><span class="score">I3</span><span class="tag tag-2">2</span></div>
+          <p class="just">2500 euros déjà provisionnés pour ce cas dans l'estimation de passage à l'échelle.</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="code">R9</td>
+        <td>Surcharge du pôle Data fin mai</td>
+        <td>
+          <div class="score-row"><span class="score">P5</span><span class="tag tag-3">3</span></div>
+          <p class="just">La surcharge est annoncée comme acquise dans le panorama des ressources internes, ce n'est pas un risque mais un fait à venir documenté.</p>
+        </td>
+        <td>
+          <div class="score-row"><span class="score">I4</span><span class="tag tag-4">4</span></div>
+          <p class="just">Le REX Box Duo décrit le même type de surcharge simultanée sur le pôle Data, avec retard effectif sur les KPI lors du projet précédent.</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="code">R10</td>
+        <td>Capacité backend résiduelle sursollicitée</td>
+        <td>
+          <div class="score-row"><span class="score">P4</span><span class="tag tag-1">1</span></div>
+          <p class="just">Le panorama des ressources chiffre la capacité résiduelle à 0,5 ETP, déjà mobilisée immédiatement sur un chantier prioritaire.</p>
+        </td>
+        <td>
+          <div class="score-row"><span class="score">I3</span><span class="tag tag-2">2</span></div>
+          <p class="just">Concerne un seul profil de compétence et un sous-ensemble de connecteurs techniques.</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="code">R11</td>
+        <td>Non-conformité packaging non détectée</td>
+        <td>
+          <div class="score-row"><span class="score">P3</span><span class="tag tag-1">1</span></div>
+          <p class="just">Précédent direct en décembre 2024, 1250 euros et deux semaines de mise au standard sur un nouveau fournisseur.</p>
+        </td>
+        <td>
+          <div class="score-row"><span class="score">I3</span><span class="tag tag-2">2</span></div>
+          <p class="just">Même ordre de grandeur que le précédent, effet réputationnel sans impact commercial direct.</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="code">R12</td>
+        <td>Taux de commandes ESAT sous la cible</td>
+        <td>
+          <div class="score-row"><span class="score">P3</span><span class="tag tag-3">3</span></div>
+          <p class="just">La cible coïncide avec le pic logistique de juin déjà identifié, plausible sans être acquise.</p>
+        </td>
+        <td>
+          <div class="score-row"><span class="score">I3</span><span class="tag tag-2">2</span></div>
+          <p class="just">N'affecte pas les objectifs commerciaux SMART, fragilise uniquement le reporting ESG annuel.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
