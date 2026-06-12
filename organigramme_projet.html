@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Organigramme Projet — Natuveris Box</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background: #f4f6f3; padding: 28px; }
+.header { margin-bottom: 16px; }
+.header h1 { font-size: 13px; font-weight: 700; color: #1B4332; margin-bottom: 4px; }
+.header p { font-size: 9px; color: #666; }
+svg { display: block; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Organigramme projet — Natuveris Box 2025-2026</h1>
+  <p>Agence Horizon · Bloc 4 Q1.1 · Source : Annexe 11 du sujet Bloc 4, p.16</p>
+</div>
+
+<svg width="1000" height="620" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    .lbl { font-family: Arial, sans-serif; }
+    .t1 { font-size: 10px; font-weight: 700; }
+    .t2 { font-size: 8px; font-weight: 400; }
+    .t3 { font-size: 7.5px; font-weight: 700; }
+  </style>
+</defs>
+
+<!-- ══ UTILITAIRES ══════════════════════════════════════════════════════ -->
+<!-- Fonction box : rect + texte centré -->
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     NIVEAU 1 — SPONSORS
+     Centre x=500, y=30, largeur boîte=200, hauteur=60
+═══════════════════════════════════════════════════════════════════ -->
+
+<!-- Sponsor 1 : Direction Générale  x=220 -->
+<rect x="120" y="20" width="200" height="80" rx="8" fill="#1B4332" stroke="#1B4332" stroke-width="1.5"/>
+<text x="220" y="44" text-anchor="middle" class="lbl t1" fill="#fff">Direction Générale</text>
+<text x="220" y="59" text-anchor="middle" class="lbl t2" fill="#ddd">Validation stratégique</text>
+<text x="220" y="71" text-anchor="middle" class="lbl t2" fill="#ddd">Arbitrages budgétaires</text>
+<rect x="155" y="78" width="130" height="14" rx="6" fill="rgba(255,255,255,0.2)"/>
+<text x="220" y="88" text-anchor="middle" class="lbl t3" fill="#fff">Sponsor exécutif</text>
+
+<!-- Sponsor 2 : Direction Marketing & Finance  x=780 -->
+<rect x="660" y="20" width="220" height="80" rx="8" fill="#1B4332" stroke="#1B4332" stroke-width="1.5"/>
+<text x="770" y="44" text-anchor="middle" class="lbl t1" fill="#fff">Direction Marketing</text>
+<text x="770" y="57" text-anchor="middle" class="lbl t1" fill="#fff">& Finance</text>
+<text x="770" y="70" text-anchor="middle" class="lbl t2" fill="#ddd">Validation go/no-go · Pilotage budget</text>
+<rect x="700" y="78" width="140" height="14" rx="6" fill="rgba(255,255,255,0.2)"/>
+<text x="770" y="88" text-anchor="middle" class="lbl t3" fill="#fff">Sponsor opérationnel</text>
+
+<!-- Traits sponsors vers chef de projet -->
+<line x1="220" y1="100" x2="220" y2="125" stroke="#aaa" stroke-width="1.5"/>
+<line x1="770" y1="100" x2="770" y2="125" stroke="#aaa" stroke-width="1.5"/>
+<line x1="220" y1="125" x2="770" y2="125" stroke="#aaa" stroke-width="1.5"/>
+<line x1="500" y1="125" x2="500" y2="135" stroke="#aaa" stroke-width="1.5"/>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     NIVEAU 2 — CHEF DE PROJET
+═══════════════════════════════════════════════════════════════════ -->
+<rect x="340" y="135" width="320" height="70" rx="8" fill="#2D9E75" stroke="#2D9E75" stroke-width="1.5"/>
+<text x="500" y="155" text-anchor="middle" class="lbl t1" fill="#fff">Agence Horizon — Chef de projet</text>
+<text x="500" y="170" text-anchor="middle" class="lbl t2" fill="#ddd">Coordination transverse · Reporting · Validation documentaire</text>
+<text x="500" y="183" text-anchor="middle" class="lbl t2" fill="#ddd">Baptiste Canton-Bréthoux · Louis Laurède</text>
+<rect x="400" y="188" width="200" height="14" rx="6" fill="rgba(255,255,255,0.2)"/>
+<text x="500" y="198" text-anchor="middle" class="lbl t3" fill="#fff">Agence Horizon</text>
+
+<!-- Trait chef vers niveau pôles -->
+<line x1="500" y1="205" x2="500" y2="230" stroke="#aaa" stroke-width="1.5"/>
+
+<!-- Ligne horizontale reliant les 6 pôles -->
+<!-- Centres des 6 pôles : 85, 250, 415, 580, 745, 915  -->
+<line x1="85" y1="230" x2="915" y2="230" stroke="#aaa" stroke-width="1.5"/>
+
+<!-- Traits verticaux vers chaque pôle -->
+<line x1="85"  y1="230" x2="85"  y2="250" stroke="#aaa" stroke-width="1.5"/>
+<line x1="250" y1="230" x2="250" y2="250" stroke="#aaa" stroke-width="1.5"/>
+<line x1="415" y1="230" x2="415" y2="250" stroke="#aaa" stroke-width="1.5"/>
+<line x1="580" y1="230" x2="580" y2="250" stroke="#aaa" stroke-width="1.5"/>
+<line x1="745" y1="230" x2="745" y2="250" stroke="#aaa" stroke-width="1.5"/>
+<line x1="915" y1="230" x2="915" y2="250" stroke="#aaa" stroke-width="1.5"/>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     NIVEAU 3 — 6 PÔLES OPÉRATIONNELS
+     Largeur boîte = 148, hauteur = 72
+     Centres : 85, 250, 415, 580, 745, 915
+═══════════════════════════════════════════════════════════════════ -->
+
+<!-- Pôle 1 : Marketing-Communication -->
+<rect x="11" y="250" width="148" height="72" rx="7" fill="#E6F1FB" stroke="#2980b9" stroke-width="1.5"/>
+<text x="85" y="268" text-anchor="middle" class="lbl t1" fill="#0C447C">Marketing</text>
+<text x="85" y="280" text-anchor="middle" class="lbl t1" fill="#0C447C">Communication</text>
+<text x="85" y="293" text-anchor="middle" class="lbl t2" fill="#444">Campagnes · Influence</text>
+<text x="85" y="304" text-anchor="middle" class="lbl t2" fill="#444">Relations presse · CRM</text>
+<rect x="45" y="311" width="80" height="13" rx="6" fill="#2980b9"/>
+<text x="85" y="321" text-anchor="middle" class="lbl t3" fill="#fff">9,5 ETP</text>
+
+<!-- Pôle 2 : Data & Insights -->
+<rect x="176" y="250" width="148" height="72" rx="7" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.5"/>
+<text x="250" y="268" text-anchor="middle" class="lbl t1" fill="#26215C">Data & Insights</text>
+<text x="250" y="283" text-anchor="middle" class="lbl t2" fill="#444">CDP · Scoring · Automation</text>
+<text x="250" y="295" text-anchor="middle" class="lbl t2" fill="#444">Reporting KPIs</text>
+<rect x="210" y="311" width="80" height="13" rx="6" fill="#534AB7"/>
+<text x="250" y="321" text-anchor="middle" class="lbl t3" fill="#fff">6 ETP</text>
+
+<!-- Pôle 3 : Studio Créatif -->
+<rect x="341" y="250" width="148" height="72" rx="7" fill="#FFF3CD" stroke="#F9A825" stroke-width="1.5"/>
+<text x="415" y="268" text-anchor="middle" class="lbl t1" fill="#5D4037">Studio Créatif</text>
+<text x="415" y="283" text-anchor="middle" class="lbl t2" fill="#444">Contenus visuels · Vidéo</text>
+<text x="415" y="295" text-anchor="middle" class="lbl t2" fill="#444">Motion design</text>
+<rect x="375" y="311" width="80" height="13" rx="6" fill="#F9A825"/>
+<text x="415" y="321" text-anchor="middle" class="lbl t3" fill="#fff">4 ETP</text>
+
+<!-- Pôle 4 : RSE & Qualité -->
+<rect x="506" y="250" width="148" height="72" rx="7" fill="#EAF3DE" stroke="#27500A" stroke-width="1.5"/>
+<text x="580" y="268" text-anchor="middle" class="lbl t1" fill="#27500A">RSE & Qualité</text>
+<text x="580" y="283" text-anchor="middle" class="lbl t2" fill="#444">Conformité ESG · Audits</text>
+<text x="580" y="295" text-anchor="middle" class="lbl t2" fill="#444">Accessibilité WCAG</text>
+<rect x="540" y="311" width="80" height="13" rx="6" fill="#27500A"/>
+<text x="580" y="321" text-anchor="middle" class="lbl t3" fill="#fff">2,5 ETP</text>
+
+<!-- Pôle 5 : IT / PWA -->
+<rect x="671" y="250" width="148" height="72" rx="7" fill="#FAECE7" stroke="#993C1D" stroke-width="1.5"/>
+<text x="745" y="268" text-anchor="middle" class="lbl t1" fill="#4A1B0C">IT / PWA</text>
+<text x="745" y="283" text-anchor="middle" class="lbl t2" fill="#444">Développement</text>
+<text x="745" y="295" text-anchor="middle" class="lbl t2" fill="#444">Intégrations API</text>
+<rect x="705" y="311" width="80" height="13" rx="6" fill="#993C1D"/>
+<text x="745" y="321" text-anchor="middle" class="lbl t3" fill="#fff">5 ETP</text>
+
+<!-- Pôle 6 : Logistique -->
+<rect x="841" y="250" width="148" height="72" rx="7" fill="#F5F5F3" stroke="#555" stroke-width="1.5"/>
+<text x="915" y="268" text-anchor="middle" class="lbl t1" fill="#222">Logistique</text>
+<text x="915" y="283" text-anchor="middle" class="lbl t2" fill="#444">Préparation box</text>
+<text x="915" y="295" text-anchor="middle" class="lbl t2" fill="#444">Approvisionnement · ESAT</text>
+<rect x="875" y="311" width="80" height="13" rx="6" fill="#555"/>
+<text x="915" y="321" text-anchor="middle" class="lbl t3" fill="#fff">14 ETP</text>
+
+<!-- Traits vers partenaires externes -->
+<line x1="85"  y1="322" x2="85"  y2="360" stroke="#aaa" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="250" y1="322" x2="250" y2="360" stroke="#aaa" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="500" y1="322" x2="500" y2="360" stroke="#aaa" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="85"  y1="360" x2="915" y2="360" stroke="#aaa" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="200" y1="360" x2="200" y2="380" stroke="#aaa" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="450" y1="360" x2="450" y2="380" stroke="#aaa" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="700" y1="360" x2="700" y2="380" stroke="#aaa" stroke-width="1.5" stroke-dasharray="4 3"/>
+<line x1="915" y1="360" x2="915" y2="380" stroke="#aaa" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     NIVEAU 4 — PARTENAIRES EXTERNES
+═══════════════════════════════════════════════════════════════════ -->
+
+<!-- Partenaire 1 : PredictX  cx=200 -->
+<rect x="110" y="380" width="180" height="68" rx="7" fill="#fff" stroke="#aaa" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="200" y="398" text-anchor="middle" class="lbl t1" fill="#444">PredictX</text>
+<text x="200" y="412" text-anchor="middle" class="lbl t2" fill="#666">Scoring churn</text>
+<text x="200" y="423" text-anchor="middle" class="lbl t2" fill="#666">Intégration CDP · DPA conforme</text>
+<rect x="148" y="437" width="104" height="13" rx="6" fill="#aaa"/>
+<text x="200" y="447" text-anchor="middle" class="lbl t3" fill="#fff">Partenaire tech.</text>
+
+<!-- Partenaire 2 : RecommAI  cx=450 -->
+<rect x="360" y="380" width="180" height="68" rx="7" fill="#fff" stroke="#aaa" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="450" y="398" text-anchor="middle" class="lbl t1" fill="#444">RecommAI</text>
+<text x="450" y="412" text-anchor="middle" class="lbl t2" fill="#666">Recommandations produit</text>
+<text x="450" y="423" text-anchor="middle" class="lbl t2" fill="#666">Feature store · DPA UE</text>
+<rect x="398" y="437" width="104" height="13" rx="6" fill="#aaa"/>
+<text x="450" y="447" text-anchor="middle" class="lbl t3" fill="#fff">Partenaire tech.</text>
+
+<!-- Partenaire 3 : Micro-influenceurs  cx=700 -->
+<rect x="608" y="380" width="184" height="68" rx="7" fill="#fff" stroke="#aaa" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="700" y="398" text-anchor="middle" class="lbl t1" fill="#444">Micro-influenceurs</text>
+<text x="700" y="410" text-anchor="middle" class="lbl t1" fill="#444">& Maison Verte</text>
+<text x="700" y="424" text-anchor="middle" class="lbl t2" fill="#666">Notoriété · Earned/paid</text>
+<text x="700" y="435" text-anchor="middle" class="lbl t2" fill="#666">Critères RSE</text>
+<rect x="648" y="437" width="104" height="13" rx="6" fill="#aaa"/>
+<text x="700" y="447" text-anchor="middle" class="lbl t3" fill="#fff">Partenaire média</text>
+
+<!-- Partenaire 4 : Boutiques vrac & ESAT  cx=915 -->
+<rect x="823" y="380" width="184" height="68" rx="7" fill="#fff" stroke="#aaa" stroke-width="1.5" stroke-dasharray="5 3"/>
+<text x="915" y="398" text-anchor="middle" class="lbl t1" fill="#444">Boutiques vrac</text>
+<text x="915" y="410" text-anchor="middle" class="lbl t1" fill="#444">& ESAT</text>
+<text x="915" y="424" text-anchor="middle" class="lbl t2" fill="#666">Réseau B2B · Inclusion sociale</text>
+<text x="915" y="435" text-anchor="middle" class="lbl t2" fill="#666">Pilote Natuveris Pro</text>
+<rect x="863" y="437" width="104" height="13" rx="6" fill="#aaa"/>
+<text x="915" y="447" text-anchor="middle" class="lbl t3" fill="#fff">Partenaire terrain</text>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     LÉGENDE
+═══════════════════════════════════════════════════════════════════ -->
+<rect x="10" y="475" width="980" height="30" rx="6" fill="none" stroke="#ddd" stroke-width="0.5"/>
+<rect x="20" y="484" width="10" height="10" rx="2" fill="#1B4332"/>
+<text x="35" y="492" class="lbl t2" fill="#444">Sponsors</text>
+<rect x="100" y="484" width="10" height="10" rx="2" fill="#2D9E75"/>
+<text x="115" y="492" class="lbl t2" fill="#444">Chef de projet</text>
+<rect x="205" y="484" width="10" height="10" rx="2" fill="#2980b9"/>
+<text x="220" y="492" class="lbl t2" fill="#444">Marketing-Com.</text>
+<rect x="315" y="484" width="10" height="10" rx="2" fill="#534AB7"/>
+<text x="330" y="492" class="lbl t2" fill="#444">Data & Insights</text>
+<rect x="420" y="484" width="10" height="10" rx="2" fill="#F9A825"/>
+<text x="435" y="492" class="lbl t2" fill="#444">Studio Créatif</text>
+<rect x="510" y="484" width="10" height="10" rx="2" fill="#27500A"/>
+<text x="525" y="492" class="lbl t2" fill="#444">RSE & Qualité</text>
+<rect x="600" y="484" width="10" height="10" rx="2" fill="#993C1D"/>
+<text x="615" y="492" class="lbl t2" fill="#444">IT / PWA</text>
+<rect x="665" y="484" width="10" height="10" rx="2" fill="#555"/>
+<text x="680" y="492" class="lbl t2" fill="#444">Logistique</text>
+<rect x="740" y="484" width="10" height="10" rx="2" fill="none" stroke="#aaa" stroke-dasharray="3 2" stroke-width="1.5"/>
+<text x="755" y="492" class="lbl t2" fill="#444">Partenaires externes</text>
+</svg>
+
+</body>
+</html>
