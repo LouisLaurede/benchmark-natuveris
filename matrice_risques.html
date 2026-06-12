@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Matrice risques, impacts, probabilités, Bloc 4</title>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f4;
+    margin: 0;
+    padding: 24px;
+    color: #333;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+  }
+  .header {
+    background-color: #065f46;
+    color: #ffffff;
+    padding: 16px 20px;
+  }
+  .header h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .header p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #d1fae5;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  thead th {
+    background-color: #f9fafb;
+    color: #555;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f1f1f1;
+    vertical-align: top;
+  }
+  tbody tr:hover {
+    background-color: #fafafa;
+  }
+  .center {
+    text-align: center;
+  }
+  .code {
+    font-weight: 600;
+    color: #444;
+  }
+  .crit {
+    font-weight: 600;
+    color: #333;
+  }
+  .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .vert { border-left: 4px solid #4ade80; }
+  .jaune { border-left: 4px solid #facc15; }
+  .orange { border-left: 4px solid #fb923c; }
+  .rouge { border-left: 4px solid #f87171; }
+
+  .badge-vert { background-color: #dcfce7; color: #166534; }
+  .badge-jaune { background-color: #fef9c3; color: #854d0e; }
+  .badge-orange { background-color: #ffedd5; color: #9a3412; }
+  .badge-rouge { background-color: #fee2e2; color: #991b1b; }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 12px 20px;
+    background-color: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    font-size: 12px;
+    color: #555;
+  }
+  .legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Matrice risques, impacts, probabilités, Bloc 4</h1>
+    <p>Échelle de 1 à 5, criticité = probabilité x impact</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Catégorie</th>
+        <th>Risque</th>
+        <th class="center">Probabilité</th>
+        <th class="center">Impact</th>
+        <th class="center">Criticité</th>
+        <th class="center">Niveau</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="orange">
+        <td class="code">R1</td>
+        <td>Planning</td>
+        <td>Brief créatif "Printemps Local" non validé à J-21, décalant l'on-boarding influenceurs, jalon go/no-go fin février, Bloc 2</td>
+        <td class="center">3</td>
+        <td class="center">4</td>
+        <td class="center crit">12</td>
+        <td class="center"><span class="badge badge-orange">Orange</span></td>
+      </tr>
+      <tr class="rouge">
+        <td class="code">R2</td>
+        <td>Planning</td>
+        <td>Concentration des trois arbitrages de juin, bilan S1, décision boutiques vrac, brief Maison Responsable, sur une fenêtre où le pôle Data est déjà saturé</td>
+        <td class="center">4</td>
+        <td class="center">4</td>
+        <td class="center crit">16</td>
+        <td class="center"><span class="badge badge-rouge">Rouge</span></td>
+      </tr>
+      <tr class="rouge">
+        <td class="code">R3</td>
+        <td>Dérives budgétaires</td>
+        <td>Confusion d'imputation entre l'enveloppe marketing annuelle, 98 000 euros, et l'enveloppe de passage à l'échelle PredictX, 28 350 euros</td>
+        <td class="center">3</td>
+        <td class="center">5</td>
+        <td class="center crit">15</td>
+        <td class="center"><span class="badge badge-rouge">Rouge</span></td>
+      </tr>
+      <tr class="jaune">
+        <td class="code">R4</td>
+        <td>Dérives budgétaires</td>
+        <td>Dépassement automatique du palier de licence CRM à 50 000 contacts actifs, sur-facturation non anticipée</td>
+        <td class="center">4</td>
+        <td class="center">2</td>
+        <td class="center crit">8</td>
+        <td class="center"><span class="badge badge-jaune">Jaune</span></td>
+      </tr>
+      <tr class="rouge">
+        <td class="code">R5</td>
+        <td>Conformité RGPD</td>
+        <td>Consentement non documenté sur les champs comportementaux PWA, bloquant l'activation de RecommAI</td>
+        <td class="center">4</td>
+        <td class="center">4</td>
+        <td class="center crit">16</td>
+        <td class="center"><span class="badge badge-rouge">Rouge</span></td>
+      </tr>
+      <tr class="jaune">
+        <td class="code">R6</td>
+        <td>Conformité RGPD</td>
+        <td>Absence de purge automatisée garantie du session_id au-delà de 24h</td>
+        <td class="center">3</td>
+        <td class="center">3</td>
+        <td class="center crit">9</td>
+        <td class="center"><span class="badge badge-jaune">Jaune</span></td>
+      </tr>
+      <tr class="rouge">
+        <td class="code">R7</td>
+        <td>Dépendances techniques</td>
+        <td>Coexistence lakehouse et CDP avec règles de synchronisation non stabilisées, risque de scores de désabonnement erronés</td>
+        <td class="center">4</td>
+        <td class="center">5</td>
+        <td class="center crit">20</td>
+        <td class="center"><span class="badge badge-rouge">Rouge</span></td>
+      </tr>
+      <tr class="jaune">
+        <td class="code">R8</td>
+        <td>Dépendances techniques</td>
+        <td>Connecteur API natif PredictX insuffisant, recours à un intégrateur externe non contractualisé</td>
+        <td class="center">3</td>
+        <td class="center">3</td>
+        <td class="center crit">9</td>
+        <td class="center"><span class="badge badge-jaune">Jaune</span></td>
+      </tr>
+      <tr class="rouge">
+        <td class="code">R9</td>
+        <td>Disponibilité ressources</td>
+        <td>Surcharge du pôle Data fin mai, migration CDP, tableaux de bord KPI et rapport ESG annuel mobilisent simultanément la même équipe</td>
+        <td class="center">5</td>
+        <td class="center">4</td>
+        <td class="center crit">20</td>
+        <td class="center"><span class="badge badge-rouge">Rouge</span></td>
+      </tr>
+      <tr class="orange">
+        <td class="code">R10</td>
+        <td>Disponibilité ressources</td>
+        <td>Capacité backend résiduelle de 0,5 ETP sursollicitée entre le sprint paiement fractionné et les connecteurs API</td>
+        <td class="center">4</td>
+        <td class="center">3</td>
+        <td class="center crit">12</td>
+        <td class="center"><span class="badge badge-orange">Orange</span></td>
+      </tr>
+      <tr class="jaune">
+        <td class="code">R11</td>
+        <td>Critères ESG</td>
+        <td>Non-détection à temps d'un défaut de conformité packaging sur un lot partenaire</td>
+        <td class="center">3</td>
+        <td class="center">3</td>
+        <td class="center crit">9</td>
+        <td class="center"><span class="badge badge-jaune">Jaune</span></td>
+      </tr>
+      <tr class="jaune">
+        <td class="code">R12</td>
+        <td>Critères ESG</td>
+        <td>Taux de commandes ESAT sous la cible de 10 % minimum, fragilisant le reporting ESG annuel</td>
+        <td class="center">3</td>
+        <td class="center">3</td>
+        <td class="center crit">9</td>
+        <td class="center"><span class="badge badge-jaune">Jaune</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="legend">
+    <span><span class="dot" style="background-color:#4ade80;"></span>Vert, 1 à 4 : maîtrisé</span>
+    <span><span class="dot" style="background-color:#facc15;"></span>Jaune, 5 à 9 : surveillé</span>
+    <span><span class="dot" style="background-color:#fb923c;"></span>Orange, 10 à 14 : renforcé</span>
+    <span><span class="dot" style="background-color:#f87171;"></span>Rouge, 15 à 25 : majeur</span>
+  </div>
+</div>
+</body>
+</html>
